@@ -32,6 +32,8 @@ function getPlayerChoice() {
 function playRound(computerSelection, playerSelection) {
     // Check for a tie.
     if (computerSelection === playerSelection) return 'tie';
+    // Compare the player and computer choices.
+    // Return the winner as 'player' or 'computer' according to the rules.
     switch(computerSelection) {
         case 'rock':
             roundWinner = (playerSelection === 'paper') ? 'player' : 'computer';
@@ -42,8 +44,6 @@ function playRound(computerSelection, playerSelection) {
         case 'scissors':
             roundWinner = (playerSelection === 'rock') ? 'player' : 'computer';
             break;
-        default:
-            roundWinner = 'error';
         }
     return roundWinner;
 }   
