@@ -2,7 +2,9 @@
 Rock Paper Scissors for The Odin Project
 
 ## Pseudocode
-- Start the game. Initialize number of rounds complete to 0.
+Start the game
+- Initialize number of rounds complete to 0.
+- Initialize choices to 'rock', 'paper', 'scissors
 - WHILE rounds complete is less than 5:
     - RANDOM computer chooses 'rock' 'paper' or 'scissors'    
     - GET input from player, trimmed, lowercase 
