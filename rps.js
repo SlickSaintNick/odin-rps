@@ -1,9 +1,6 @@
-// Start the game. Initialize variables.
-//let roundWinner = '';
-
+// Start the game. Initialize global variables.
 let playerWins = 0;
 let computerWins = 0;
-
 const choices = ['rock', 'paper', 'scissors'];
 
 // Get the results html elements.
@@ -62,15 +59,17 @@ function playRound(computerSelection, playerSelection) {
 
 
 function updateResults(computerSelection, playerSelection, roundWinner) {
+    // Process the results to increment scores as appropriate, and return an
+    // appropriate message depending on the winner.
     let resultMessage = processResults(roundWinner);
     
-    // Update round result in console and increment counters.
+    // Update results on the screen.
     paraRoundResults.innerText = 
     `I chose: ${computerSelection} --- You chose: ${playerSelection}
     ${resultMessage}`
     paraScorePlayer.textContent = `Player score: ${playerWins}`;
     paraScoreComputer.textContent = `Computer score: ${computerWins}`;
-}   
+}
 
 
 function processResults(roundWinner) {
@@ -96,28 +95,3 @@ function gameOver() {
     paraScorePlayer.textContent = '';
     paraScoreComputer.textContent = '';
 }
-
-// const rounds = parseInt(prompt("Best of how many rounds? ").trim());
-// if (rounds > 0) {
-//     playerWins = game(rounds);
-//     console.log(`Game over --- You won ${playerWins} out of ${rounds} rounds.`);
-// }
-
-/*
-function getPlayerChoice() {
-    // Get text input from player input for their choice.
-    // Continue until a valid option is chosen.
-    keepGoing = true;
-    while (keepGoing) {
-        // Prompt the player for their choice.
-        playerSelection = prompt("Rock, paper, or scissors? ").toLowerCase().trim();
-        if (playerSelection === 'rock' 
-         || playerSelection === 'paper'
-         || playerSelection === 'scissors') {
-            // If it matches one of the options, break out of the loop.
-            keepGoing = false;
-        }
-    }
-    return playerSelection;
-}
-*/
